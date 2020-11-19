@@ -1,0 +1,84 @@
+.section-restapi{
+    background-color: $color-grey-light-2;
+
+
+    .api{
+        width: 90%;
+        margin: 1.875rem auto;
+
+        &__section{
+            background-color: #fff;
+            width: 100%;
+            border: 1px solid rgb(177, 177, 177);
+            position: relative;
+            margin-bottom: 3.125rem;
+            padding: 1.875rem 1.25rem;
+            
+
+            &-group{
+                margin-bottom: 0.9375rem;     
+            }
+
+            &--students::before{
+                content: 'Students';
+                @extend %section-before-content;
+                
+            }
+
+            &--instructors::before{
+                content: 'Instructors';
+                @extend %section-before-content;
+            }
+
+            &--courses::before{
+                content: 'Courses';
+                @extend %section-before-content;
+            }
+        }
+
+        &__request-block{
+            overflow: auto;
+            white-space: nowrap;
+            margin-bottom: 1.25rem;
+
+            :not(:first-child){
+                margin-left: 1.875rem;
+            }
+        }
+    }
+
+    .heading-primary{
+        color: unset;
+
+        @include respond(phone){
+            margin-top: 0.125rem;
+            font-size: 35px;
+        }
+        
+        &::after,
+        &::before{
+            width: 20%;
+            background-color: $color-grey-dark-5;
+
+            @include respond(phone){
+                display: none;
+            }
+            @include respond(tab-port){
+                width: 10%;
+            }
+        }
+    }
+
+    
+}
+
+%section-before-content{
+    font-size: 1.5625rem;
+    background-color: $color-grey-light-2;
+    border: 1px $color-grey-dark-1 solid;
+    padding: 0 0.625rem;
+    position: absolute;
+    top: -1.4063rem;
+    left: 50%;
+    transform: translateX(-50%);
+}

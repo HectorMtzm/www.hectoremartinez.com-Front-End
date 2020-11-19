@@ -1,0 +1,50 @@
+@keyframes glitch {
+    @for $i from 0 through 20{ 
+        #{percentage($i*(1/20))} {
+            clip: rect(random(50)+px, 10.625rem, random(50)+px, 0px);
+            transform: skewX((random(10)-5)+deg) translate(-50%, -50%);;
+        }
+    }
+}
+
+@keyframes glitch2 {
+    @for $i from 0 through 20{ 
+        #{percentage($i*(1/20))} {
+            clip: rect(random(50)+px, 10.625rem, random(50)+px, 0px);
+            transform: skewX((random(10)-5)+deg) translate(-50%, -50%);;
+        }
+    }
+}
+
+@keyframes inLeft {
+    0%{
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes inRight {
+    0%{
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes inBottom {
+    0%{
+        transform: translateY(12.5rem);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

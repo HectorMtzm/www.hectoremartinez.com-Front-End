@@ -1,0 +1,64 @@
+.form{
+    margin-top: 3.125rem;
+
+    @include respond(phone){
+        margin-top: 2rem;
+    }
+
+    &__group{
+        margin-bottom: 1.25rem;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__input{
+        display: block;
+        font-family: inherit;
+        font-size: 0.9rem;
+        color: inherit;
+        width: 100%;
+        padding: 0.9375rem 1.25rem;
+        border-radius: 2px;
+        background-color: $color-grey-light-1;
+        border: 1px solid #e2e2e2;
+        transition: all .2s;
+
+        @include respond(phone){
+            font-size: .9rem;
+            padding: 10px 12.5px;
+        }
+
+        &:focus{
+            outline: none;
+            box-shadow: 0 0.625rem 1.25rem rgba(#000, .1);
+            border-bottom: 3px solid $color-primary-light;
+            
+            &:invalid{
+                border-bottom: 3px solid $color-tertiary-light;
+            }
+        }
+
+        &--text-area{
+            height: 12.5rem;
+            resize: none;
+
+            @include respond(phone){
+                height: 9rem;
+            }
+        }
+    }
+
+    &__label{
+        color: $color-grey-dark-4;
+        font-weight: 700;
+        margin-left: 1.25rem;
+        margin-top: 0.4375rem;
+        display: block;
+
+        @include respond(phone){
+            font-size: 1rem;
+        }
+    }
+
+}

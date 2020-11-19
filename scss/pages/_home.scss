@@ -1,0 +1,131 @@
+
+.section-about{
+    background-color: $color-grey-light-1;
+    width: 100%;
+    margin-top: -12.5rem;
+    padding: 15.625rem 3.125rem 5.5rem 3.125rem;
+
+    @include respond(phone){
+        padding: 250px 0.9375rem 5.5rem 0.9375rem;
+    }
+
+    .heading-primary{
+        color: $color-grey-dark-5;
+    }
+
+    .heading-primary::before,
+    .heading-primary::after{
+        background-color: setColor($color-grey-light-1);
+
+        @include respond(tab-port){
+            width: 30%;
+        }
+
+        @include respond(phone){
+            display: none;
+        }
+    }
+
+    .presentation{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 2.5fr 1fr;
+
+        @include respond(phone){
+            display: unset;
+        }
+
+        @include respond(tab-port){
+            display: unset;
+        }
+
+        &__shape{
+            float: left;
+            // shape-outside: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
+            // shape-outside: circle(50% at 50% 50%);
+            width: 50%;
+            height: 0;
+            padding-bottom: 50%;
+            // clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
+            // clip-path: circle(50% at 50% 50%);
+
+            @include respond(phone){
+                float: unset;
+                width: 100%;
+                height: 50%;
+                padding-bottom: 0;
+            }
+
+            @include respond(tab-port){
+                float: unset;
+                width: 100%;
+                height: 50%;
+                padding-bottom: 0;
+            }
+
+        }
+
+        &__image{
+            margin-top: 0.6875rem;
+            width: 100%;
+            object-fit: cover;
+
+        }
+
+        &__description{
+            transform: translateX(1.25rem);
+            padding-right: 1.875rem;
+            text-align: justify;
+            width: 100%;
+
+            @include respond(phone){
+                transform: translateX(0);
+                padding: 0 0.9375rem;
+                text-align: justify;
+                width: 100%;
+            }
+            
+
+            p:not(:last-child){
+                margin-bottom: 1.25rem;
+            }
+        }
+
+        &__hobbies{
+            margin-left: 1.25rem;
+            
+            @include respond(phone){
+                margin: 1rem 0;
+                padding: 0 0.9375rem;
+            }
+
+            @include respond(tab-port){
+                margin: 1rem 0;
+                padding: 0 0.9375rem;
+            }
+
+            &-list{
+                margin-left: 1.0625rem;
+            }
+        }
+    }
+}
+
+.section-skills{
+    height: 100vh;
+    background-color: $color-grey-dark-4;
+    clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
+    margin-top: -12.5rem;
+    padding: 15.625rem 3.125rem 15.625rem 3.125rem;
+    color: $color-grey-light-1;
+
+    *:not(.heading-primary){
+        color: $color-grey-light-1;
+    }
+
+    .heading-primary::before,
+    .heading-primary::after{
+        color: #fff;
+        background-color: setColor($color-grey-dark-4);
+    }
+}

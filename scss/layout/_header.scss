@@ -1,0 +1,78 @@
+.header {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 85vh;
+    background-color: $color-grey-dark-5;
+    clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 85vh);
+    // transition: all .5s reverse;
+    overflow: hidden;
+
+    &__title{
+        margin-top: -6.25rem;
+        font-size: 6.25rem;
+        text-align: center;
+        font-family: $font-title;
+        font-weight: 700;
+        animation: inLeft 1s .3s ease-in-out;
+        animation-fill-mode: backwards;
+
+        @include respond(phone){
+            font-size: 80px;
+            line-height: 1.2;
+            margin-bottom: 40px;
+            margin-top: -3.25rem;
+        }
+    }
+
+    &__paragraph{
+        font-family: $font-paragraph;
+        font-size: 2.5rem;
+        animation: inRight 1s .3s ease-in-out;
+        animation-fill-mode: backwards;
+        text-align: center;
+
+        @include respond(phone){
+            font-size: 30px;
+        }
+    }
+
+    &__button{
+        animation: inBottom 1s 1.2s ease-in-out;
+        animation-fill-mode: backwards;
+    }
+
+    .text-glitch{
+        font-weight: 700;
+    }
+
+    .glitch-wrapper{ 
+        position: relative; 
+        width: 100%;
+        height: 100%;
+    }
+
+    .text-glitch::before, 
+    .text-glitch::after{
+        position: absolute;
+        content: "Software";
+        top: 50%;
+        
+    }
+
+    .text-glitch::before {
+        left: 49%;
+        text-shadow: -2px 0 red;
+        animation: glitch 2s infinite alternate-reverse;
+    }
+    
+    .text-glitch::after {
+        left: 51%;
+        text-shadow: -2px 0 blue;
+        animation: glitch2 2s infinite;
+    }
+
+}

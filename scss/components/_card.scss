@@ -1,0 +1,181 @@
+.card {
+    perspective: 56.25rem;
+    -webkit-perspective: 56.25rem;
+    width: 29%;
+    height: 32.5rem;
+    margin: 2.125rem 1rem;
+
+    @include respond(phone){
+        width: 300px;
+    }
+
+    @include respond(tab-land){
+        width: 300px;
+    }
+
+    &__side {
+        height: 32.5rem;
+        transition: all .8s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        border-radius: 3px;
+        overflow: hidden;
+        box-shadow: 0 0.9375rem 1.25rem rgba(#000, .15);
+
+        &--front {
+            background-color:$color-grey-dark-4;
+        }
+
+        &--back {
+            transform: rotateY(180deg);
+
+            &-1 {
+                background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+                color: setColor($color-secondary-dark);
+            }
+            
+            &-2{
+                background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+                color: setColor($color-primary-dark);
+            }
+
+            &-3{
+                background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
+                color: setColor($color-tertiary-dark);
+            }
+        }
+    }
+
+    &:hover &__side--front{
+        transform: rotateY(-180deg);
+        -webkit-transform: rotateY(-180deg);
+    }
+    &:hover &__side--back{
+        transform: rotateY(0);
+        -webkit-transform: rotateY(0);
+    }
+
+
+    //--------------- Front side styling ---------------
+    &__picture{
+        background-size: cover;
+        height: 17.1875rem;
+        background-blend-mode: screen;
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+        &--1{
+            background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url("../img/project1.jpg");
+        }
+
+        &--2{
+            background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark), url("../img/project2.jpg");
+        }
+
+        &--3{
+            background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark), url("../img/project3.jpg");
+        }
+
+        &--4{
+            background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark), url("../img/project4.jpg");
+        }
+    }
+
+    &__heading{
+        font-size: 1.75rem;
+        font-weight: 300;
+        text-align: right;
+        color: #fff;
+        position: absolute;
+        top: 11.5rem;
+        right: 1.25rem;
+        width: 75%;
+        
+    }
+
+    &__heading-span{
+        padding: 0.625rem 0.9375rem;
+
+        //breaks a line into two identical-separate lines
+        box-decoration-break: clone;
+
+        &--1{
+            background-image: linear-gradient(to right bottom, rgba($color-secondary-light, .85), rgba($color-secondary-dark, .85));
+        }
+        &--2{
+            background-image: linear-gradient(to right bottom, rgba($color-primary-light, .85), rgba($color-primary-dark, .85));
+        }
+        &--3{
+            background-image: linear-gradient(to right bottom, rgba($color-tertiary-light, .85), rgba($color-tertiary-dark, .85));
+        }
+    }
+
+    &__details{
+        padding: 1.875rem 1.25rem 0 1.25rem;
+        color: #fff;
+
+        ul{
+            list-style: none;
+            width: 80%;
+            margin: auto;
+
+            li{
+                text-align: center;
+                font-size: 0.9375rem;
+                padding: 0.625rem;
+
+                &:not(:last-child){
+                    border-bottom: 1px solid #eee;
+                }
+            }
+        }
+    }
+
+
+    //--------------- Back side styling ---------------
+
+    &__side--back{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1.25rem 0.625rem;
+
+        .btn{
+            margin-top: auto;
+            margin-bottom: 0.625rem;
+        }
+    }
+
+    &__technologies{
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        font-size: 0.875rem;
+        list-style: none;
+        color: #fff;
+
+
+        &-item{
+            line-height: 1.8rem;
+            display: inline-block;
+            margin: 0.3125rem 0.3125rem;
+            padding: 0 0.625rem;
+            border-radius: 0.625rem;
+        }
+    }
+
+    .heading-tertiary{
+        margin-top: 1.25rem;
+        text-align: left;
+        margin-left: 0.9375rem;
+    }
+
+    .category-language{ background-color: #c70303; }
+    .category-framework{ background-color: #27b315; }
+    .category-db{ background-color: #231fec; }
+
+}

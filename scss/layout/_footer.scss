@@ -1,0 +1,22 @@
+.footer{
+    height: 4.6875rem;
+    display: flex;
+
+    &__social-media{
+        display: flex;
+        justify-content: space-around;
+        height: auto;
+        width: 33%;
+
+        @include respond(phone){
+            width: 80%;
+        }
+    }
+
+    &__item{
+        &:link,
+        &:visited{
+            color: #fff;
+        }
+    }
+}
